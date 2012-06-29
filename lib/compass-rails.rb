@@ -21,7 +21,7 @@ module CompassRails
       end
       #load the rails config
       require "#{rails_config_path}/config/application.rb"
-      if rails31? || rails32?
+      if (rails31? || rails32?) && asset_pipeline_enabled?
         require 'sass-rails'
         require 'sprockets/railtie'
         require 'rails/engine'
